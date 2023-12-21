@@ -11,17 +11,97 @@ body{
     width: 50%;
     background-color: aquamarine;
     border-radius: 7px;
+    position: relative;
 }
 
-h1{
+.welcome{
     text-shadow: 2px 2px #05949b;
     font-size: 2em;
 }
 
 .pic-div img{
-    height: 100%;
+    height: auto;
     max-width: 100%;
 }
+
+.exit{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    margin: 0;
+}
+
+.exit:hover{
+    font-size: 2em;
+    color: red;
+    cursor: pointer;
+}
+
+.sec-page{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #000000d1;
+    border-radius: 7px;
+}
+
+.weather-details{
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(to right,#2c2c8d,#5c8d9d) ;
+    position: absolute;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility:hidden;
+}
+
+input{
+    width: 250px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    font-size: 1em;
+    padding-left: 10px
+
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid green;
+    
+}
+
+.search-btn{
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 7px;
+    font-size: 1em;
+}
+
+.search-btn:hover{
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+}
+
+.search-container{
+    height: 100%;
+    /* background-color: blue; */
+    border-radius: 7px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+
 
 .get-started-btn{
     height: 60px;
@@ -35,6 +115,7 @@ h1{
 .get-started-btn:hover{
     cursor: pointer;
     background-color: aqua;
+    border: 1px solid green;
 }
 
 .center-center{
@@ -58,4 +139,79 @@ h1{
     display: flex;
     justify-content: center;
     
+}
+
+.main-igm-div{
+    height: 55%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.humidity-wind{
+    height: 35%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-div{
+    height: 70%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.degree-city-div{
+    height: 40%;
+    width: 40%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-icon{
+    height: 100%;
+    max-width: 65%;
+}
+
+.degrees{
+    margin: 0;
+
+}
+
+.city-name{
+    margin: 0;
+}
+
+.wind-icon{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.humidity-icon{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wind{
+    max-width: 80%;
+    height: 40%;
+}
+
+.margin0{
+    margin: 0;
 }
