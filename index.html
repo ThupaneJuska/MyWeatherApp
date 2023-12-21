@@ -11,7 +11,7 @@
         <div id="popUp" class="sec-page" hidden>
             <div class="search-container">
                 <h2 id="exit" class="exit">X</h2>
-                <input type="text" placeholder="Search place for weather update">
+                <input id="searchCity" type="text" placeholder="Search place for weather update">
                 <button id="searchBtn" class="search-btn">Search</button>
             </div>
             
@@ -19,12 +19,13 @@
         <!-- weather details -->
         <div id="weatherDetails" class="weather-details">
             <div class="main-igm-div">
+                <h1 id="prev"><</h1>
                 <div class="img-div">
                     <img src="/clouds.png" alt="" class="weather-icon">
                 </div>
                 <div class="degree-city-div">
                     <h1 class="degrees">22°C</h1>
-                    <h2 class="city-name">Pretoria</h2>
+                    <h2 id="city" class="city-name">Pretoria</h2>
                 </div>
             </div>
             <div class="humidity-wind">
