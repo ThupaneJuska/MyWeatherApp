@@ -169,7 +169,7 @@ input:focus{
 
 .degree-city-div{
     height: 40%;
-    width: 40%;
+    width: 56%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -202,7 +202,7 @@ input:focus{
 }
 
 .humidity-icon{
-    width: 30%;
+    width: 36%;
     height: 100%;
     display: flex;
     justify-content: center;
