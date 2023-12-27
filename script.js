@@ -7,14 +7,25 @@ const city = document.getElementById('city');
 const searchCity = document.getElementById('searchCity').value;
 const imgIcon = document.getElementById('imgIcon');
 const prev = document.getElementById('prev');
+const dayTime = document.getElementById('dayTime');
+const description = document.getElementById('description');
 const apiKey="d94ca0efe777cebdeea9d2b80f9f391b";
-const cite = prompt("Enter city name")
+const cite = prompt();
 const dataSet = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 // const iconId = data.weather[0].icon;
 // const iconUrl = `http://openweathermap.org/img/w/${iconId}.png`;
 
 // document.getElementById('weather-icon').src = iconUrl;
 
+function dayTimes(){
+    const currentDate = new Date();
+    const day = currentDate.toLocaleDateString('en-US',{weekday:'long'});
+    const currentTime = currentDate.toLocaleTimeString('en-US');
+
+    dayTime.innerHTML = `${day}<br>${currentTime}`;
+}
+
+dayTimes()
 
 
 
@@ -29,6 +40,7 @@ fetch(dataSet+cite+`&appid=${apiKey}`)
         document.getElementById('imgIconW').src = iconUrl;
         document.querySelector('.humid').innerHTML = response.main.humidity + "%";
         document.querySelector('.wind-speed').innerHTML = response.wind.speed + "km/h";
+        description.innerHTML = response.weather[0].description;
 
     })
 
@@ -72,3 +84,6 @@ prev.addEventListener('click',pre=>{
     weatherDetails.style.visibility = "hidden";
 
 })
+
+
+
