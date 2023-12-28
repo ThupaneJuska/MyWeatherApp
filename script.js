@@ -41,6 +41,7 @@ fetch(dataSet+cite+`&appid=${apiKey}`)
         document.querySelector('.humid').innerHTML = response.main.humidity + "%";
         document.querySelector('.wind-speed').innerHTML = response.wind.speed + "km/h";
         description.innerHTML = response.weather[0].description;
+        console.log(response.gust);
 
     })
 
