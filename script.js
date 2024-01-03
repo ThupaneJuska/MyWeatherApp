@@ -4,13 +4,14 @@ const exit = document.getElementById('exit');
 const searchBtn  = document.getElementById('searchBtn');
 const weatherDetails = document.getElementById('weatherDetails');
 const city = document.getElementById('city');
-const searchCity = document.getElementById('searchCity').value;
+const searchCity = document.getElementById('searchCity');
 const imgIcon = document.getElementById('imgIcon');
 const prev = document.getElementById('prev');
 const dayTime = document.getElementById('dayTime');
 const description = document.getElementById('description');
+const searchForm = document.getElementById("searchForm")
 const apiKey="d94ca0efe777cebdeea9d2b80f9f391b";
-const cite = prompt();
+// const cite = searchCity;
 const dataSet = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 // const iconId = data.weather[0].icon;
 // const iconUrl = `http://openweathermap.org/img/w/${iconId}.png`;
@@ -29,21 +30,21 @@ dayTimes()
 
 
 
-fetch(dataSet+cite+`&appid=${apiKey}`)
-    .then(promise => promise.json())
-    .then(response =>{
-        // city.innerHTML = response.name;
-        document.querySelector(".city-name").innerHTML = response.name;
-        document.querySelector(".degrees").innerHTML = response.main.temp +"°C";
-        const iconId = response.weather[0].icon;
-        const iconUrl = `http://openweathermap.org/img/w/${iconId}.png`;
-        document.getElementById('imgIconW').src = iconUrl;
-        document.querySelector('.humid').innerHTML = response.main.humidity + "%";
-        document.querySelector('.wind-speed').innerHTML = response.wind.speed + "km/h";
-        description.innerHTML = response.weather[0].description;
-        console.log(response.visibility);
+// fetch(dataSet+cite+`&appid=${apiKey}`)
+//     .then(promise => promise.json())
+//     .then(response =>{
+//         // city.innerHTML = response.name;
+//         document.querySelector(".city-name").innerHTML = response.name;
+//         document.querySelector(".degrees").innerHTML = Math.round(response.main.temp) +"°C";
+//         const iconId = response.weather[0].icon;
+//         const iconUrl = `http://openweathermap.org/img/w/${iconId}.png`;
+//         document.getElementById('imgIconW').src = iconUrl;
+//         document.querySelector('.humid').innerHTML = response.main.humidity + "%";
+//         document.querySelector('.wind-speed').innerHTML = response.wind.speed + "km/h";
+//         description.innerHTML = response.weather[0].description;
+//         console.log(response.visibility);
 
-    })
+//     })
 
 // async function checkWeather(){
 //     const response = await fetch(dataSet);
@@ -60,10 +61,15 @@ fetch(dataSet+cite+`&appid=${apiKey}`)
 
 // checkWeather()
 
-fetch(dataSet+cite+`&appid=${apiKey}`)
-    .then(promise =>promise.json())
-    .then(results=>console.log(results ))
+// fetch(dataSet+cite+`&appid=${apiKey}`)
+//     .then(promise =>promise.json())
+//     .then(results=>console.log(results ))
 
+// searchForm.addEventListener("submit", eve => {
+//     eve.preventDefault()
+// })
+
+// searchCity.addEventListener
 
 getStarted.addEventListener('click',e=>{
     popUp.removeAttribute("hidden");
@@ -75,6 +81,26 @@ exit.addEventListener('click',ex=>{
 
 searchBtn.addEventListener('click',btn=>{
     btn.preventDefault();
+
+    fetch(dataSet+searchCity.value+`&appid=${apiKey}`)
+    .then(promise => promise.json())
+    .then(response =>{
+        console.log(searchCity.value)
+        console.log(response)
+        // city.innerHTML = response.name;
+        document.querySelector(".city-name").innerHTML = response.name;
+        document.querySelector(".degrees").innerHTML = Math.round(response.main.temp) +"°C";
+        const iconId = response.weather[0].icon;
+        const iconUrl = `http://openweathermap.org/img/w/${iconId}.png`;
+        document.getElementById('imgIconW').src = iconUrl;
+        document.querySelector('.humid').innerHTML = response.main.humidity + "%";
+        document.querySelector('.wind-speed').innerHTML = response.wind.speed + "km/h";
+        description.innerHTML = response.weather[0].description;
+        console.log(response.visibility);
+
+        searchCity.value=""
+
+    })
     weatherDetails.style.visibility = "visible";
      city.innerHTML = searchCity.value;
     
