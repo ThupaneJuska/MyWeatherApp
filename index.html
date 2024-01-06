@@ -8,9 +8,100 @@
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="script.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   
 </head>
 
+<!-- weather forecast below -->
+<div class="main-forecast" id="mainForecast">
+    <!-- section start -->
+    <div class="section">
+        <div class="forecast-left">
+            <h3 class="back" id="back"> < </h3>
+            <div class="big-image">
+                <div class="cover"></div>
+                <img src="/clouds.png" class="big-forecast-image">
+            </div>
+            <div class="weather-text center-center">
+                <h1 class="weather-forecast">WEATHER FORECAST</h1>
+            </div>
+        </div>
+        <div class="forecast-right">
+            <h1 class="margin0 current-weather">CURRENT WEATHER</h1>
+            <p class="margin0">For</p>
+            <h2 class="margin0 place-name"></h2>
+            <img  id="currentWeatherImg">
+            <h1 class="margin0 current-degree">2</h1>
+            <ul class="no-bullets margin0">
+                <li>Wind Speed: <span class="wind-sp black"></span></li>
+                <li>Humidity: <span class="humid-perc black"></span></li>
+                <li>Description: <span class="desc black"></span></li>
+                <li>Main: <span class="main-desc black"></span></li>
+                <li>Presure: <span class="presure black"></span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- section ending -->
+    <footer class="footer">
+        <div class="forecast">
+            <div class="height-100 border-right">
+                <div class="forecast-icon">
+                    <h3 class="margin0 mon-date">Monday</h3>
+                    <img id="monday" class="forecast-icon">
+                </div>
+                <div class="forecast-date">
+                    <h4 class="margin0 monday-temp" >0°</h4>
+                    <small class="wind-s">ss</small>
+                    <small class="hum">ss</small>
+                </div>
+            </div>
+            <div class="height-100 border-right">
+                <div class="forecast-icon">
+                    <h3 class="margin0 tue-date">Tuesday</h3>
+                    <img id="tuesday" class="forecast-icon">
+                </div>
+                <div class="forecast-date">
+                    <h4 class="margin0 tuesday-temp">0°</h4>
+                    <small class="wind-sT">ss</small>
+                    <small class="humT">ss</small>
+                </div>
+            </div>
+            <div class="height-100 border-right">
+                <div class="forecast-icon">
+                    <h3 class="margin0 wed-date">Wednesday</h3>
+                    <img id="wednesday" class="forecast-icon">
+                </div>
+                <div class="forecast-date">
+                    <h4 class="margin0 wed-temp">0°</h4>
+                    <small class="wind-sW">ss</small>
+                    <small class="humW">ss</small>
+                </div>
+            </div>
+            <div class="height-100 border-right">
+                <div class="forecast-icon">
+                    <h3 class="margin0 thurs-date"></h3>
+                    <img id="thursday" class="forecast-icon">
+                </div>
+                <div class="forecast-date">
+                    <h4 class="margin0 thurs-temp">0°</h4>
+                    <small class="wind-sS">ss</small>
+                    <small class="humS">ss</small>
+                </div>
+            </div>
+            <div class="height-100 border-right">
+                <div class="forecast-icon">
+                    <h3 class="margin0 fri-date">Friday</h3>
+                    <img id="friday" class="forecast-icon">
+                </div>
+                <div class="forecast-date">
+                    <h4 class="margin0 fri-temp">0°</h4>
+                    <small class="wind-sF">ss</small>
+                    <small class="humF">ss</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- End weather forecast -->
 <body class="center-center">
     <div class="main-div">
         <div id="popUp" class="sec-page" hidden>
@@ -40,7 +131,10 @@
                     <p class="margin0 humid"></p>
                     <p class="margin0">Humidity</p>
                 </div>
-                <p id="dayTime"></p>
+                <div class="time">
+                    <p id="days"></p>
+                    <p id="times"></p>
+                </div>
                 <div class="humidity-icon">
                     <img src="/wind.png" alt="" class="humidity">
                     <p class="margin0 wind-speed"></p>
